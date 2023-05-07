@@ -248,7 +248,7 @@ SELECT
 FROM
 	photos;
 
-/* 18. The average time on the platform */
+/* 18. Average time of existence of the accounts */
 SELECT 
     ROUND(AVG(DATEDIFF(CURDATE(), created_at)) / 360, 2) AS avg_years_in_platform
 FROM
