@@ -17,7 +17,8 @@ photo_tags (photo_id, tag_id)
 
 -- --------------------------------------------------------------------------------------------------------------
 
-/* 1. The first 10 users on the platform */
+/* 1. We want to reward our users who have been around the longest.  
+Find the 10 oldest users. */
 
 SELECT 
     *
@@ -32,7 +33,8 @@ SELECT
 FROM
 	users;
     
-/* 3. The day of the week most users register on */
+/* 3. What day of the week do most users register on?
+We need to figure out when to schedule an ad campgain */
 SELECT 
     DAYNAME(created_at) AS day_of_week,
     COUNT(id) AS total_registrations
@@ -41,7 +43,8 @@ FROM
 GROUP BY day_of_week
 ORDER BY total_registrations DESC;
 
-/* 4. The users who have never posted a photo */
+/* 4. We want to target our inactive users with an email campaign.
+Find the users who have never posted a photo */
 SELECT 
     u.id, u.username, 
     COUNT(p.id) AS total_photos
@@ -52,7 +55,8 @@ FROM
 GROUP BY u.id
 HAVING total_photos = 0;
 
-/* 5. The most likes on a single photo */
+/* 5. We're running a new contest to see who can get the most likes on a single photo.
+Who won? */
 SELECT
 	p.user_id,
 	l.photo_id,
@@ -143,7 +147,8 @@ GROUP BY t.id
 ORDER BY total_likes DESC
 LIMIT 1;
 
-/* 14. The users who have liked every single photo on the site */
+/* 14. We have a small problem with bots on our site...
+Find users who have liked every single photo on the site */
 WITH rank_unique_photo_likes AS (
 SELECT
 	RANK() OVER (ORDER BY COUNT(l.photo_id) DESC) AS ranking,
@@ -181,7 +186,8 @@ HAVING unique_likes = (
 							photos
 );
 
-/* 15. Total number of users without comments */
+/* 15. We also have a problem with celebrities.
+Find users who have never commented on a photo */
 SELECT
 	COUNT(DISTINCT u.id) AS users_without_comments
 FROM 
@@ -190,7 +196,8 @@ FROM
 	comments AS c ON u.id = c.user_id
 WHERE c.comment_text IS NULL;
 
-/* 16. The percentage of users who have either never commented on a photo or likes every photo */
+/* 16. Are we overrun with bots and celebrity accounts?
+Find the percentage of our users who have either never commented on a photo or have commented on every photo */
 WITH like_every_photo AS (
 							SELECT
 								u.id,
