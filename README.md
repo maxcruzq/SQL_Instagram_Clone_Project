@@ -31,3 +31,7 @@ MySQL project that solves real business questions and scenarios, on a clone mimi
 16. The percentage of users who have either never commented on a photo or likes every photo
 17. Clean URLs of photos posted on the platform
 18. Average time of existence of the accounts
+
+## Tableau Dashboard
+You can see the Dashboard in the following link:
+https://public.tableau.com/app/profile/maximiliano.cruz/viz/InstagramCloneDataAnalysis/Dashboard1
