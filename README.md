@@ -1,7 +1,7 @@
 # SQL_Instagram_Clone_Project
 
 ## Overview
-MySQL project that solves real business questions and scenarios, on a clone mimic version of Instagram database.
+MySQL project that solves real business questions and scenarios on a clone mimic version of Instagram database.
 
 ## Schema
 * users (id, username, created_at)
@@ -34,4 +34,7 @@ MySQL project that solves real business questions and scenarios, on a clone mimi
 
 ## Tableau Dashboard
 You can see the Dashboard in the following link:
-https://public.tableau.com/app/profile/maximiliano.cruz/viz/InstagramCloneDataAnalysis/Dashboard1
+[SQL Instagram Clone Project Tableau Dashboard](https://public.tableau.com/app/profile/maximiliano.cruz/viz/InstagramCloneDataAnalysis/Dashboard1)
+
+![Captura de Pantalla 2023-06-05 a la(s) 19 03 39](https://github.com/maxcruzq/SQL_Tableau_Instagram_Clone_Project/assets/132103792/7f6640b7-87b9-4e6c-9e6a-8a88cb2b41ed)
+
