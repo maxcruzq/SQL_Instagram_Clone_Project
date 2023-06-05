@@ -1,4 +1,4 @@
-# SQL_Instagram_Clone_Project
+# SQL Tableau Instagram Clone Project
 
 ## Overview
 MySQL project that solves real business questions and scenarios on a clone mimic version of Instagram database.
